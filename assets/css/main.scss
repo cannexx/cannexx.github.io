@@ -1,0 +1,50 @@
+---
+---
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* 본문 전체 */
+.page__content {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* 문단 */
+.page__content p {
+  margin-bottom: 0.8rem;
+}
+
+/* 제목 */
+.page__content > h2:first-of-type {
+  margin-top: 0.5rem;
+}
+
+/* 리스트 */
+.page__content li {
+  margin-bottom: 0.3rem;
+}
+
+/* 인라인 코드만 조금 더 크게 */
+.page__content p code,
+.page__content li code,
+.page__content td code {
+  font-size: 0.95em;   /* 1.00 → 0.95 */
+  background-color: #444;  
+  color: #f1f1f1;     
+  font-weight: 500;     
+  border-radius: 4px;
+}
+
+/* 코드 블록 바깥 상자 */
+.page__content pre {
+  font-size: 0.73rem;  
+  padding: 0.55rem 0.7rem;  /* 살짝 더 줄임 */
+  line-height: 1.35;    /* 줄 간격도 조금 더 압축 */
+}
+
+/* 코드 블록 내부 코드는 따로 리셋 */
+.page__content pre code {
+  font-size: 1em;
+  padding: 0;
+}
