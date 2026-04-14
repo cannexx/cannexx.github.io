@@ -4,46 +4,60 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* 본문 전체 */
+/* ===== 본문 전체 ===== */
 .page__content {
   font-size: 17px;
-  line-height: 1.6;
+  line-height: 1.68;
 }
 
-/* 문단 */
+/* ===== 문단 ===== */
 .page__content p {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.05rem;
 }
 
-/* 제목 */
+/* 리스트 바로 앞 문단만 간격 줄이기 */
+.page__content p:has(+ ul),
+.page__content p:has(+ ol) {
+  margin-bottom: 0.4rem;
+}
+
+/* ===== 제목 ===== */
 .page__content > h2:first-of-type {
   margin-top: 0.5rem;
 }
 
-/* 리스트 */
-.page__content li {
-  margin-bottom: 0.3rem;
+/* ===== 리스트 ===== */
+.page__content ul,
+.page__content ol {
+  margin-top: 0 !important;       /* 위 간격 제거 (핵심) */
+  margin-bottom: 1rem;
+  padding-left: 1.2rem;           /* 들여쓰기 살짝 정리 */
 }
 
-/* 인라인 코드만 조금 더 크게 */
+.page__content li {
+  margin-bottom: 0.28rem;
+  line-height: 1.65;
+}
+
+/* ===== 인라인 코드 ===== */
 .page__content p code,
 .page__content li code,
 .page__content td code {
-  font-size: 0.95em;   /* 1.00 → 0.95 */
-  background-color: #444;  
-  color: #f1f1f1;     
-  font-weight: 500;     
+  font-size: 0.95em;
+  background-color: #444;
+  color: #f1f1f1;
+  font-weight: 500;
   border-radius: 4px;
+  padding: 0.12em 0.35em;
 }
 
-/* 코드 블록 바깥 상자 */
+/* ===== 코드 블록 ===== */
 .page__content pre {
-  font-size: 0.73rem;  
-  padding: 0.55rem 0.7rem;  /* 살짝 더 줄임 */
-  line-height: 1.35;    /* 줄 간격도 조금 더 압축 */
+  font-size: 0.73rem;
+  padding: 0.55rem 0.7rem;
+  line-height: 1.35;
 }
 
-/* 코드 블록 내부 코드는 따로 리셋 */
 .page__content pre code {
   font-size: 1em;
   padding: 0;
